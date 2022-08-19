@@ -1,0 +1,12 @@
+{{page-title "Location"}}
+
+{{#each @model as |listItem| }}
+  <div class="list-item column">
+    <div class="list-item-map"></div>
+    <h3 class="list-item-title">{{ listItem.name }}</h3>
+    <span class="list-item-phone">{{ listItem.phone }}</span>
+    <button class="list-item-action" type="button" {{on "click" (fn this.onLocationSelect listItem.id)}}>Select</button>
+  </div>
+{{/each}}
+
+{{outlet}}

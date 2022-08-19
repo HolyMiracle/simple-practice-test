@@ -1,0 +1,15 @@
+<div class="wizard-wrapper">
+  <ul class="wizard-list">
+    {{#each this.steps key='info' as |step index|}}
+      <li class="wizard-list-item {{ if (eq this.currentRoute step.route) 'active' }}">
+        <span class="counter">{{ add index 1 }}</span>
+        <LinkTo @route={{ step.route }} class="wizard-list-item-info">
+          <span class="name">{{ to-upper-case step.name }}</span>
+          {{#each step.info as |step| }}
+            <span class="info">{{ step }}</span>
+          {{/each}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+{{page-title "Service"}}
+
+{{#each @model as |listItem| }}
+  <div class="list-item">
+    <div>
+      <div class="list-item-title">{{ listItem.description }}</div>
+      <div class="list-item-duration">{{ listItem.duration }} minutes</div>
+    </div>
+    <button class="list-item-action" type="button" {{on "click" (fn this.onServiceSelect listItem.id)}}>Select</button>
+  </div>
+{{/each}}
+
+{{outlet}}
